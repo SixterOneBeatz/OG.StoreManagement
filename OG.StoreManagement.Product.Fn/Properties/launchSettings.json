@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "OG.StoreManagement.Product.Fn": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7166",
+      "launchBrowser": false
+    }
+  }
+}

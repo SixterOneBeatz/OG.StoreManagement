@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "appInsights1": {
+      "type": "appInsights"
+    },
+    "storage1": {
+      "type": "storage",
+      "connectionId": "AzureWebJobsStorage"
+    },
+    "rabbitmq1": {
+      "type": "rabbitmq",
+      "connectionId": "rabbitmq",
+      "dynamicId": null
+    }
+  }
+}
