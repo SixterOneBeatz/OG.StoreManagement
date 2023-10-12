@@ -7,7 +7,7 @@ namespace OG.StoreManagement.Product.Fn.Subscribers
     public class ProductSubscriber
     {
         [FunctionName("ProductSubscriber")]
-        public void Run([RabbitMQTrigger("product-queue", ConnectionStringSetting = "rabbitmq")] string requestBody, ILogger log)
+        public void Run([RabbitMQTrigger("product-queue", ConnectionStringSetting = "<%rabbitmq%>")] string requestBody, ILogger log)
         {
             var data = JsonSerializer.Deserialize<Classy>(requestBody);
 

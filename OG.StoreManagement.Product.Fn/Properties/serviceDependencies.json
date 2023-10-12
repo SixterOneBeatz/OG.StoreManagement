@@ -6,11 +6,6 @@
     "storage1": {
       "type": "storage",
       "connectionId": "AzureWebJobsStorage"
-    },
-    "rabbitmq1": {
-      "type": "rabbitmq",
-      "connectionId": "rabbitmq",
-      "dynamicId": null
     }
   }
 }

@@ -6,15 +6,6 @@
     "storage1": {
       "type": "storage.emulator",
       "connectionId": "AzureWebJobsStorage"
-    },
-    "rabbitmq1": {
-      "containerPorts": "5672:5672,15672:15672",
-      "secretStore": null,
-      "containerName": "rabbitmq",
-      "containerImage": "rabbitmq:3.12-management",
-      "type": "rabbitmq.container",
-      "connectionId": "rabbitmq",
-      "dynamicId": null
     }
   }
 }
