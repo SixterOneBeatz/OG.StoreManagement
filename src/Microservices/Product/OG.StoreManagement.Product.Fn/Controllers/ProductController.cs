@@ -11,14 +11,9 @@ using static OG.StoreManagement.Core.Consts.QueueConsts;
 
 namespace OG.StoreManagement.Product.Fn.Controllers
 {
-    public class ProductController
+    public class ProductController(IServiceBus serviceBus)
     {
-        private readonly IServiceBus _serviceBus;
-
-        public ProductController(IServiceBus serviceBus)
-        {
-            _serviceBus = serviceBus;
-        }
+        private readonly IServiceBus _serviceBus = serviceBus;
 
         [FunctionName("AddProduct")]
         public async Task<IActionResult> AddProduct([HttpTrigger(AuthorizationLevel.Function, "post", Route = "Product/AddProduct")] HttpRequest req, ILogger log)
