@@ -1,17 +1,20 @@
-using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OG.StoreManagement.Product.Fn.Subscribers
 {
-    public class ProductSubscriber
+    public class ProductSubscriber(ILoggerFactory loggerFactory)
     {
-        [FunctionName("ProductSubscriber")]
-        public void Run([RabbitMQTrigger("product-queue", ConnectionStringSetting = "<%rabbitmq%>")] string requestBody, ILogger log)
-        {
-            var data = JsonSerializer.Deserialize<Classy>(requestBody);
+        private readonly ILogger _logger = loggerFactory.CreateLogger<ProductSubscriber>();
 
-            log.LogWarning($"Message {data.Message} received from queue at {data.Created}");
+        [Function("ProductSubscriber")]
+        public void Run([RabbitMQTrigger("product-queue", ConnectionStringSetting = "rabbitmq")] string requestBody)
+        {
+            var data = JsonSerializer.Deserialize<ClassX>(requestBody);
+
+            _logger.LogWarning($"Message {data.Message} received from queue at {data.Created}");
         }
     }
 }

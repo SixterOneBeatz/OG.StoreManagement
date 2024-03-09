@@ -2,7 +2,7 @@
   "profiles": {
     "OG.StoreManagement.Product.Fn": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7166",
+      "commandLineArgs": "--port 7287",
       "launchBrowser": false
     }
   }

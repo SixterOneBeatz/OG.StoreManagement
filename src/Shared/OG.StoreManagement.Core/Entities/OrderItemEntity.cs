@@ -1,8 +1,9 @@
 ﻿namespace OG.StoreManagement.Core.Entities
 {
-    public class InventoryItem
+    public class OrderItemEntity
     {
-        public int InventoryItemId { get; set; }
+        public int OrderId { get; set; }
+        public int OrderItemId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
     }

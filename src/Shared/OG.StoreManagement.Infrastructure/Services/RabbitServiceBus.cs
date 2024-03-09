@@ -1,4 +1,5 @@
-﻿using OG.StoreManagement.Core.Services;
+﻿using Microsoft.Extensions.Configuration;
+using OG.StoreManagement.Core.Services;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
@@ -10,20 +11,23 @@ namespace OG.StoreManagement.Infrastructure.Services
     {
         private readonly IConnection _connection;
         private readonly IModel _channel;
+        private readonly IConfiguration _configuration;
         private readonly Dictionary<QueueEnum, string> _queueDictionary;
 
-        public RabbitServiceBus()
+        public RabbitServiceBus(IConfiguration configuration)
         {
+            _configuration = configuration;
+
             _queueDictionary = new()
             {
-                { QueueEnum.Inventory, QueueNames.INVENTORY_QUEUE },
-                { QueueEnum.Order, QueueNames.ORDER_QUEUE },
-                { QueueEnum.Product, QueueNames.PRODUCT_QUEUE },
+                { QueueEnum.Inventory, INVENTORY_QUEUE_NAME },
+                { QueueEnum.Order, ORDER_QUEUE_NAME },
+                { QueueEnum.Product, PRODUCT_QUEUE_NAME },
             };
 
             var factory = new ConnectionFactory
             {
-                Uri = new(Environment.GetEnvironmentVariable("rabbitmq"))
+                Uri = new(_configuration.GetConnectionString("rabbitmq"))
             };
 
             _connection = factory.CreateConnection();

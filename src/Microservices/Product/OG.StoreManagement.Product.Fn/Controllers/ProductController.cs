@@ -1,31 +1,31 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using OG.StoreManagement.Core.Services;
-using System.IO;
-using System.Threading.Tasks;
 using static OG.StoreManagement.Core.Consts.QueueConsts;
 
 namespace OG.StoreManagement.Product.Fn.Controllers
 {
-    public class ProductController(IServiceBus serviceBus)
+
+    public class ProductController(IServiceBus serviceBus, ILogger<ProductController> logger)
     {
         private readonly IServiceBus _serviceBus = serviceBus;
+        private readonly ILogger<ProductController> _logger = logger;
 
-        [FunctionName("AddProduct")]
-        public async Task<IActionResult> AddProduct([HttpTrigger(AuthorizationLevel.Function, "post", Route = "Product/AddProduct")] HttpRequest req, ILogger log)
+        [Function("AddProduct")]
+        public async Task<IActionResult> AddProduct([HttpTrigger(AuthorizationLevel.Function, "post", Route = "Product/AddProduct")] HttpRequest req)
         {
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
 
-            Classy data = JsonConvert.DeserializeObject<Classy>(requestBody);
+            ClassX data = JsonConvert.DeserializeObject<ClassX>(requestBody);
             _serviceBus.Publish(QueueEnum.Product, data);
 
-            log.LogWarning($"Message {data.Message} sended at {data.Created}");
+            _logger.LogWarning($"Message {data.Message} sended at {data.Created}");
 
             return new OkResult();
         }
+
     }
 }

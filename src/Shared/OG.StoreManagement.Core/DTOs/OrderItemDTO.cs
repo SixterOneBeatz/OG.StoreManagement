@@ -1,6 +1,6 @@
-﻿namespace OG.StoreManagement.Core.Entities
+﻿namespace OG.StoreManagement.Core.DTOs
 {
-    public class OrderItem
+    public class OrderItemDTO
     {
         public int OrderItemId { get; set; }
         public int ProductId { get; set; }
