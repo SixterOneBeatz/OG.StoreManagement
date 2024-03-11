@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 using OG.StoreManagement.Core.DTOs;
 using OG.StoreManagement.Core.Services;
 using OG.StoreManagement.Product.Application.Commands;
-using static OG.StoreManagement.Core.Consts.QueueConsts;
 
 namespace OG.StoreManagement.Product.Fn.Controllers
 {
@@ -24,7 +23,7 @@ namespace OG.StoreManagement.Product.Fn.Controllers
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
 
             ProductDTO data = JsonConvert.DeserializeObject<ProductDTO>(requestBody);
-            
+
             await _mediator.Send(new AddProductCommand(data));
 
             _logger.LogWarning($"Product {data.Name} sended");

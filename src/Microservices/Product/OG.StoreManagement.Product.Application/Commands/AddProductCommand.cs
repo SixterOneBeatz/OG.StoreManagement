@@ -2,7 +2,6 @@
 using OG.StoreManagement.Core.DTOs;
 using OG.StoreManagement.Core.Services;
 using static OG.StoreManagement.Core.Consts.QueueConsts;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OG.StoreManagement.Product.Application.Commands
 {
