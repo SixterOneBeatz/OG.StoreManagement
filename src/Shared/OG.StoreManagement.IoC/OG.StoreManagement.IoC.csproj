@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Microservices\Product\OG.StoreManagement.Product.Application\OG.StoreManagement.Product.Application.csproj" />
     <ProjectReference Include="..\OG.StoreManagement.Core\OG.StoreManagement.Core.csproj" />
     <ProjectReference Include="..\OG.StoreManagement.Infrastructure\OG.StoreManagement.Infrastructure.csproj" />
   </ItemGroup>
