@@ -35,9 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OG.StoreManagement.Inventor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OG.StoreManagement.Product.Fn", "src\Microservices\Product\OG.StoreManagement.Product.Fn\OG.StoreManagement.Product.Fn.csproj", "{713F87B4-3E1A-4C7F-9FB3-6C3ED978EEAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OG.StoreManagement.Order.Fn", "src\Microservices\Order\OG.StoreManagement.Order.Fn\OG.StoreManagement.Order.Fn.csproj", "{20DB6B6B-C616-4419-9855-23915B963BAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OG.StoreManagement.Order.Fn", "src\Microservices\Order\OG.StoreManagement.Order.Fn\OG.StoreManagement.Order.Fn.csproj", "{20DB6B6B-C616-4419-9855-23915B963BAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OG.StoreManagement.Inventory.Fn", "src\Microservices\Inventory\OG.StoreManagement.Inventory.Fn\OG.StoreManagement.Inventory.Fn.csproj", "{C4895FC7-4A67-47BC-8091-327E7A924B0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OG.StoreManagement.Inventory.Fn", "src\Microservices\Inventory\OG.StoreManagement.Inventory.Fn\OG.StoreManagement.Inventory.Fn.csproj", "{C4895FC7-4A67-47BC-8091-327E7A924B0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

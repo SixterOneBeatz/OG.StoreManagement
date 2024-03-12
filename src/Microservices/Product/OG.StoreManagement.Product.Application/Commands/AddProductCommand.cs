@@ -13,6 +13,7 @@ namespace OG.StoreManagement.Product.Application.Commands
     internal class AddProductCommandHandler(IServiceBus serviceBus) : IRequestHandler<AddProductCommand, Unit>
     {
         private readonly IServiceBus _serviceBus = serviceBus;
+
         public async Task<Unit> Handle(AddProductCommand request, CancellationToken cancellationToken)
         {
             _serviceBus.Publish(QueueEnum.Product, request.Product);

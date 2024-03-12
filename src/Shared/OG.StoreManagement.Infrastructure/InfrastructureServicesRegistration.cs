@@ -9,6 +9,7 @@ namespace OG.StoreManagement.Infrastructure
         public static IServiceCollection AddGlobalInfrastructureServices(this IServiceCollection services)
         {
             services.AddSingleton<IServiceBus, RabbitServiceBus>();
+            services.AddTransient<IRestClientService, RestClientService>();
 
             return services;
         }
