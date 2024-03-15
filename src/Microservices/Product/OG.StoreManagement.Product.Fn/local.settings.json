@@ -6,6 +6,7 @@
     "InventoryAPIUrl": "http://localhost:7279/api/Inventory/"
   },
   "ConnectionStrings": {
-    "rabbitmq": "amqp://guest:guest@localhost:5672/"
+    "rabbitmq": "amqp://guest:guest@localhost:5672/",
+    "ProductDB": "Server=(local); Database=MSProduct; Trusted_Connection=True;"
   }
 }

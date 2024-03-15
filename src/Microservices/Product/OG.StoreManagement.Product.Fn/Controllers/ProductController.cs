@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using OG.StoreManagement.Core.DTOs;
 using OG.StoreManagement.Core.Services;
-using OG.StoreManagement.Product.Application.Commands;
+using OG.StoreManagement.Product.Application.Features.Commands;
 
 namespace OG.StoreManagement.Product.Fn.Controllers
 {

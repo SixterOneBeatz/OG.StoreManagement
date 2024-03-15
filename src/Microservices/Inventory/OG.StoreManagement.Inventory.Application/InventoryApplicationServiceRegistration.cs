@@ -2,11 +2,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace OG.StoreManagement.Product.Application
+namespace OG.StoreManagement.Inventory.Application
 {
-    public static class ProductApplicationServiceRegistration
+    public static class InventoryApplicationServiceRegistration
     {
-        public static void AddProductApplicationServices(this IServiceCollection services)
+        public static void AddInventoryApplicationServices(this IServiceCollection services)
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
 
